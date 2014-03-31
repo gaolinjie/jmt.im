@@ -2022,8 +2022,7 @@ ul.hotactive li span.hotactive_n {
 	padding-left:20px;
 }
 .contentbox_item .item_baseinfo {
-	border-bottom:#dbdbdb dotted 1px;
-	padding:13px 0px 5px 0px;
+	padding: 0px 0px 5px 0px;
 	margin-bottom:10px;
 }
 .contentbox_item .item_baseinfo span {
