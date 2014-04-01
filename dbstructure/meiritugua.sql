@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50527
  Source Host           : localhost
- Source Database       : meiritugua
+ Source Database       : jtm.im
 
  Target Server Type    : MySQL
  Target Server Version : 50527
@@ -29,8 +29,7 @@ CREATE TABLE `user` (
   `username` text,
   `intro` text,
   `avatar` text,
-  `cover` text,
-  `posts` int(11) DEFAULT NULL,
+  `permission` int(11) DEFAULT 0,
   `created` datetime DEFAULT NULL,
   `updated` datetime DEFAULT NULL,
   `last_login` datetime DEFAULT NULL,
@@ -45,7 +44,6 @@ CREATE TABLE `post` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` text,
   `thumb` text,
-  `cover` text,
   `intro` text,
   `content` text,
   `via` text,
@@ -64,23 +62,6 @@ CREATE TRIGGER `post_delete_trigger` BEFORE DELETE ON `post` FOR EACH ROW BEGIN
  ;;
 delimiter ;
 
--- ----------------------------
---  Table structure for `head1`
--- ----------------------------
-DROP TABLE IF EXISTS `head`;
-CREATE TABLE `head` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_id` int(11) DEFAULT NULL,
-  `shows` int(11) DEFAULT 1,
-  `sort` int(11) DEFAULT 0,
-  `splash` text,
-  `label` text,
-  `horizontal` text,
-  `vertical` text,
-  `style` text,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
 
@@ -97,18 +78,7 @@ CREATE TABLE `std` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
--- ----------------------------
---  Table structure for `std`
--- ----------------------------
-DROP TABLE IF EXISTS `ooxx`;
-CREATE TABLE `ooxx` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `post_id` int(11) DEFAULT NULL,
-  `oo` int(11) DEFAULT 0,
-  `xx` int(11) DEFAULT 0,
-  `created` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 --  Table structure for `item`
